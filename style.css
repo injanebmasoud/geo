@@ -1,0 +1,1039 @@
+@font-face {
+    font-family: 'Anjoman';
+    src: url('Anjoman-Bold.woff2') format('woff2');
+    src: url('Anjoman-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anjoman', Tahoma, Arial, sans-serif;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+}
+
+
+/* Header styles */
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* استایل‌های جدید برای لوگو در نسخه دسکتاپ و موبایل */
+
+
+/* این کد را به فایل style.css اضافه کنید */
+
+.mobile-nav {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.desktop-logo {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-logo img,
+.mobile-nav .logo img {
+    height: 50px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #034277;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #034277;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+
+/* تغییر استایل‌ها برای نسخه موبایل */
+
+
+/* تنظیم margin-top برای حالت موبایل */
+
+
+/* تنظیم اصلی برای main-content */
+
+.main-content {
+    margin-top: 70px;
+    /* همسان با ارتفاع هدر */
+    padding-top: 0;
+    /* حذف هرگونه padding اضافی */
+}
+
+
+/* تنظیمات خاص موبایل */
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: 70px;
+    }
+    /* حذف هرگونه margin یا padding اضافی در اسلایدر */
+    .hero-slider {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+
+/* فیکس اضطراری برای حذف فاصله */
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: 70px !important;
+    }
+    .hero-slider {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    /* حذف هرگونه margin یا padding اضافی در المنت‌های بالایی */
+    .hero-slider,
+    .hero-slide,
+    .hero-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        margin-top: 70px;
+        /* نه 100px */
+    }
+}
+
+
+/* همچنین مطمئن شوید که این استایل در فایل CSS شما موجود است (معمولاً هست) */
+
+.competition-axes {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.axis-list {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.axis-list li {
+    position: relative;
+    padding: 0.5rem 1.2rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.axis-list li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #2c3e50;
+}
+
+.axis-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.axis-card h3 {
+    margin: 1rem 0;
+}
+
+.axes-title {
+    text-align: right;
+    margin-bottom: 3rem;
+    color: #034277;
+    margin-right: 4%;
+}
+
+.registration-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    text-align: right;
+}
+
+.registration-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.registration-video video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.registration-content h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.registration-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-number {
+    background: #2c3e50;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.register-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+    background: #1a252f;
+}
+
+@media (max-width: 768px) {
+    .registration-container {
+        grid-template-columns: 1fr;
+    }
+    .registration-video {
+        order: 2;
+    }
+    .registration-content {
+        order: 1;
+        text-align: center;
+    }
+    .step {
+        justify-content: center;
+    }
+}
+
+.axes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.axis-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.axis-card:hover {
+    transform: translateY(-5px);
+}
+
+.axis-card i {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.axis-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.axis-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .axes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* اضافه کردن ارتفاع مشخص برای هدر */
+    height: 70px;
+}
+
+
+/* برای اطمینان از تراز شدن صحیح منوی موبایل با هدر */
+
+.mobile-menu {
+    top: 70px;
+    /* باید با ارتفاع هدر یکسان باشد */
+}
+
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: flex;
+        width: 50%;
+    }
+    .desktop-logo {
+        display: none;
+    }
+    .nav-menu {
+        display: none !important;
+        /* اضافه کردن !important برای اطمینان از عدم نمایش منوی اصلی در موبایل */
+    }
+    .header-container {
+        justify-content: space-between;
+    }
+    .header-actions {
+        width: 50%;
+        justify-content: flex-end;
+    }
+}
+
+.gallery {
+    padding: 60px 20px;
+    background: #f8f8f8;
+}
+
+.gallery-title {
+    text-align: right;
+    margin-right: 4%;
+    color: #034277;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 20px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #034277;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.nav-menu a:hover {
+    color: #0077c8;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 13px;
+    width: 120px;
+    background: transparent;
+}
+
+.buy-ticket-btn {
+    background-color: #034277;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+/* Main content with padding for fixed header */
+
+.main-content {
+    margin-top: 60px;
+}
+
+
+/* Hero Section */
+
+.hero-slider {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide {
+    width: 100%;
+    height: 100%;
+}
+
+#sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-slider {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 80px;
+    right: 50%;
+    transform: translateX(50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+}
+
+.slider-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Museum Info Section */
+
+.museum-info {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.info-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-size: 28px;
+    color: #034277;
+    font-weight: 700;
+}
+
+.opening-hours {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.opening-hours i {
+    color: #034277;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #034277;
+    color: white;
+    border: none;
+    display: block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #023054;
+}
+
+.btn-outline {
+    border: 1px solid #034277;
+    color: #034277;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background-color: #f0f7ff;
+}
+
+
+/* Exhibitions Section */
+
+.exhibitions {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.exhibition-card {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.exhibition-card:hover {
+    transform: translateY(-5px);
+}
+
+.exhibition-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.exhibition-content {
+    padding: 20px;
+}
+
+.exhibition-title {
+    color: #034277;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.exhibition-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+
+/* Large Exhibition */
+
+.large-exhibition {
+    grid-column: span 3;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-top: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0f7ff;
+}
+
+.large-exhibition-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.large-exhibition-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 60, 120, 0.8), transparent);
+    color: white;
+}
+
+.large-exhibition-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.large-exhibition-desc {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #034277;
+    color: white;
+    padding: 50px 0 30px;
+    margin-top: 60px;
+}
+
+
+/* تغییر فوتر به حالت افقی */
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+
+/* رسپانسیو کردن فوتر افقی */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-links a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.contact-item {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-direction {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.footer-direction:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .exhibitions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .hero-content {
+        font-size: 28px;
+        bottom: 50px;
+    }
+    .info-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .exhibitions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .large-exhibition {
+        grid-column: span 2;
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        margin-top: 100px;
+    }
+    .hero-slider {
+        height: 300px;
+    }
+    .hero-content {
+        font-size: 24px;
+        bottom: 40px;
+    }
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info-title {
+        font-size: 22px;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+    .exhibitions {
+        grid-template-columns: 1fr;
+    }
+    .large-exhibition {
+        grid-column: span 1;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.large-exhibition {
+    grid-column: span 2;
+}
+
+.footer-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        margin-top: 100px;
+    }
+    .hero-slider {
+        height: 300px;
+    }
+    .hero-content {
+        font-size: 24px;
+        bottom: 40px;
+    }
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .info-title {
+        font-size: 22px;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+    .exhibitions {
+        grid-template-columns: 1fr;
+    }
+    .large-exhibition {
+        grid-column: span 1;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
