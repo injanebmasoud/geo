@@ -211,34 +211,33 @@
     </div>
     <script>
         const slides = [{
-            image: ' img/slide1.png ',
-            text: 'ژئولیگ ۲۰۲۵؛ چالش نهایی نقشه‌برداران! '
+            image: 'img/slide1.png',
+            text: 'ژئولیگ ۲۰۲۵؛ چالش نهایی نقشه‌برداران!'
         }, {
-            image: 'img/slide2.png ',
-            text: ' جایزه بزرگ در انتظار شماست! '
+            image: 'img/slide2.png',
+            text: 'جایزه بزرگ در انتظار شماست!'
         }, {
-            image: 'img/slide3.png ',
-            text: 'مسابقه، رقابت، افتخار! '
+            image: 'img/slide3.png',
+            text: 'مسابقه، رقابت، افتخار!'
         }];
 
-
         let currentSlide = 0;
-        const sliderImage = document.getElementById('sliderImage ');
-        const sliderText = document.getElementById('sliderText ');
-        const prevButton = document.querySelector('.slider-arrow.prev ');
-        const nextButton = document.querySelector('.slider-arrow.next ');
+        const sliderImage = document.getElementById('sliderImage');
+        const sliderText = document.getElementById('sliderText');
+        const prevButton = document.querySelector('.slider-arrow.prev');
+        const nextButton = document.querySelector('.slider-arrow.next');
 
         function updateSlide() {
             sliderImage.src = slides[currentSlide].image;
             sliderText.textContent = slides[currentSlide].text;
         }
 
-        prevButton.addEventListener('click ', () => {
+        prevButton.addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             updateSlide();
         });
 
-        nextButton.addEventListener('click ', () => {
+        nextButton.addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             updateSlide();
         });
@@ -249,14 +248,14 @@
         }, 5000);
     </script>
     <script>
-        document.querySelectorAll('.nav-menu a[href^="#" ] ').forEach(anchor => {
-            anchor.addEventListener('click ', function(e) {
+        document.querySelectorAll('.nav-menu a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href ');
-                if (targetId !== '# ') {
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
                     const targetElement = document.querySelector(targetId);
                     targetElement.scrollIntoView({
-                        behavior: 'smooth '
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -264,39 +263,40 @@
     </script>
     <script>
         // برای منوی همبرگری موبایل
-        const hamburgerMenu = document.getElementById('hamburgerMenu ');
-        const mobileMenu = document.getElementById('mobileMenu ');
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-        hamburgerMenu.addEventListener('click ', function() {
-            this.classList.toggle('active ');
-            mobileMenu.classList.toggle('active ');
+        hamburgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
         });
 
         // بستن منو با کلیک روی لینک‌ها
-        document.querySelectorAll('.mobile-menu a[href^="#" ] ').forEach(anchor => {
-            anchor.addEventListener('click ', function(e) {
-                mobileMenu.classList.remove('active ');
-                hamburgerMenu.classList.remove('active ');
+        document.querySelectorAll('.mobile-menu a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
 
-                const targetId = this.getAttribute('href ');
-                if (targetId !== '# ') {
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
                     e.preventDefault();
                     const targetElement = document.querySelector(targetId);
                     targetElement.scrollIntoView({
-                        behavior: 'smooth '
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
         // بستن منو با کلیک خارج از منو
-        document.addEventListener('click ', function(e) {
-            if (!mobileMenu.contains(e.target) && !hamburgerMenu.contains(e.target) && mobileMenu.classList.contains('active ')) {
-                mobileMenu.classList.remove('active ');
-                hamburgerMenu.classList.remove('active ');
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !hamburgerMenu.contains(e.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
             }
         });
     </script>
+
 
 </body>
 
